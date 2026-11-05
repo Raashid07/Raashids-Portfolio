@@ -106,6 +106,11 @@ a:hover { color: rgb(185, 243, 255); }
 [data-scroller] { mask-image: linear-gradient(to right, rgb(0, 0, 0) calc(100% - 56px), transparent); }
 [data-scroller][data-end] { mask-image: none; }
 [data-scroller]:focus-visible { outline-offset: -2px; outline: rgb(185, 164, 255) solid 2px !important; }
+[data-m="cs-foot"] a { color: rgb(201, 198, 214); }
+[data-m="cs-foot"] a:hover { color: rgb(243, 242, 242); }
+@media (min-width: 900px) {
+  [data-m="cs-nav"] { padding-left: 4px !important; margin-left: -4px; }
+}
 [data-m="more"] { display: flex; flex-direction: column; gap: 20px; }
 [data-m="more"] > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 0px 22px; font-size: 16px; font-weight: 700; color: rgb(243, 242, 242); border-radius: 16px; border: 1px solid rgba(243, 242, 242, 0.14); background: rgb(11, 10, 16); }
 [data-m="more"] > summary::-webkit-details-marker { display: none; }
@@ -216,7 +221,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-offset: 3
             
               <h3 data-m="sub" style="margin: 16px 0px -4px; font-size: clamp(20px, 2vw, 26px); line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; color: rgb(243, 242, 242);">Problem &amp; Solution</h3>
             
-            <div data-reveal="" style="border-radius: 24px; overflow: hidden; transition: opacity 1s 0.1s, transform 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s; padding: clamp(20px, 3vw, 40px); background: rgb(13, 11, 19); border: 1px solid rgba(243, 242, 242, 0.08);"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(24px, 4vw, 56px); align-items: center;"><div style="border-radius: 20px; overflow: hidden; max-width: 380px;"><div><img decoding="async" width="476" height="712" src="assets/as/c2.webp" alt="" loading="lazy" style="display: block; width: 100%; height: auto;"></div></div><div style="display: flex; flex-direction: column; gap: 28px;"><div style="display: flex; flex-direction: column; gap: 12px;"><h3 style="margin: 0px; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 800; color: rgb(243, 242, 242);">Problem</h3><p style="margin: 0px; font-size: 17px; line-height: 1.6; color: rgb(201, 198, 214); text-wrap: pretty;">Users often struggle to discover and explore diverse regional art due to scattered resources, limited access, and cultural barriers.</p></div><div style="height: 2px; background: rgba(243, 242, 242, 0.12);"></div><div style="display: flex; flex-direction: column; gap: 12px;"><h3 style="margin: 0px; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 800; color: rgb(243, 242, 242);">Solution</h3><p style="margin: 0px; font-size: 17px; line-height: 1.6; color: rgb(201, 198, 214); text-wrap: pretty;">The ArtSphere app brings regional and cultural art forms into one accessible platform. It curates diverse art forms — visual, performing, cultural, and modern — through videos, stories, and interactive experiences.</p></div></div></div></div>
+            <div data-reveal="" style="border-radius: 24px; overflow: hidden; transition: opacity 1s 0.1s, transform 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s; padding: clamp(20px, 3vw, 40px); background: rgb(13, 11, 19); border: 1px solid rgba(243, 242, 242, 0.08);"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(24px, 4vw, 56px); align-items: center;"><div style="display: flex; flex-direction: column; gap: 28px;"><div style="display: flex; flex-direction: column; gap: 12px;"><h4 style="margin: 0px; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 800; color: rgb(243, 242, 242);">Problem</h4><p style="margin: 0px; font-size: 17px; line-height: 1.6; color: rgb(201, 198, 214); text-wrap: pretty;">Users often struggle to discover and explore diverse regional art due to scattered resources, limited access, and cultural barriers.</p></div><div style="height: 2px; background: rgba(243, 242, 242, 0.12);"></div><div style="display: flex; flex-direction: column; gap: 12px;"><h4 style="margin: 0px; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 800; color: rgb(243, 242, 242);">Solution</h4><p style="margin: 0px; font-size: 17px; line-height: 1.6; color: rgb(201, 198, 214); text-wrap: pretty;">The ArtSphere app brings regional and cultural art forms into one accessible platform. It curates diverse art forms — visual, performing, cultural, and modern — through videos, stories, and interactive experiences.</p></div></div></div></div>
           
           
             
@@ -476,7 +481,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-offset: 3
 
   
 
-  </div></div></div>
+  
+  <footer data-gut="" data-m="cs-foot" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding: 32px clamp(20px, 4vw, 56px) 40px; border-top: 1px solid rgba(243, 242, 242, 0.08); font-size: 15px; font-weight: 600;"><span style="color: rgb(168, 164, 184);">© 2026 Raashid Momin</span><span style="display: flex; flex-wrap: wrap; gap: 8px 24px;"><a href="mailto:raashid0703@gmail.com" style="display: inline-flex; align-items: center; min-height: 44px;">raashid0703@gmail.com</a><a href="https://www.linkedin.com/in/mohammad-raashidmomin07/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px;">LinkedIn</a><a href="https://drive.google.com/file/d/14lDuTGYT2HKwR5VAYpY5lFybtBi0XCFj/view?usp=sharing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px;">Resume</a></span></footer></div></div></div>
 
 
 
@@ -514,7 +520,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-offset: 3
   }
   const scrollers = [...document.querySelectorAll('[data-scroller]')];
   const edge = sc => { if (sc.scrollLeft + sc.clientWidth >= sc.scrollWidth - 2) sc.setAttribute('data-end', ''); else sc.removeAttribute('data-end'); };
-  scrollers.forEach(sc => { sc.addEventListener('scroll', () => edge(sc), { passive: true }); edge(sc); });
+  scrollers.forEach(sc => { sc.addEventListener('scroll', () => edge(sc), { passive: true }); sc.querySelectorAll('img').forEach(i => i.addEventListener('load', () => edge(sc))); edge(sc); });
+  addEventListener('load', () => scrollers.forEach(edge));
   addEventListener('resize', () => scrollers.forEach(edge));
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   addEventListener('resize', update);
