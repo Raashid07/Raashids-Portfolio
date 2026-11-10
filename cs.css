@@ -1,23 +1,31 @@
 /* Case studies — same world as the home page: 60 canvas · 30 ink + paper · 10 cobalt */
 @font-face{font-family:"Archivo";src:url(assets/fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
 @font-face{font-family:"Archivo";src:url(assets/fonts/archivo-italic.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-style:italic;font-display:swap}
-html{scrollbar-color:#b9b9b2 #edede8}
-html,body{background:#edede8!important;color:#151515}
+/* theme tokens (r, g, b) — light is the default, dark is opt-in from the header toggle */
+:root{--canvas:237,237,232;--paper:248,248,244;--ink:21,21,21;--t1:44,44,41;--t2:57,57,53;--t3:70,70,63;--t4:85,85,79;--t5:92,92,86;--t6:100,100,93;--t7:107,107,100;--accent:36,51,201;--accent2:26,38,143;--c-orange:176,67,31;--c-red:178,58,58;--c-blue:31,95,153;--c-red2:155,44,44;--c-amber:135,88,0;--c-green:31,122,69;--c-pink:168,40,90;--panel:220,220,213;color-scheme:light}
+:root[data-theme="dark"]{--canvas:20,20,19;--paper:31,31,29;--ink:240,240,234;--t1:226,226,220;--t2:207,207,200;--t3:194,194,187;--t4:178,178,171;--t5:168,168,161;--t6:158,158,151;--t7:148,148,141;--accent:150,162,255;--accent2:176,185,255;--c-orange:255,158,124;--c-red:255,160,160;--c-blue:159,211,255;--c-red2:255,182,182;--c-amber:255,214,130;--c-green:142,230,174;--c-pink:255,160,196;--panel:44,44,41;color-scheme:dark}
+.theme-btn{display:inline-grid;place-items:center;width:42px;height:42px;padding:0;border:1.5px solid rgba(var(--ink),.3);border-radius:50%;background:none;color:rgb(var(--ink));cursor:pointer;transition:border-color .2s,background-color .2s}
+.theme-btn:hover{border-color:rgb(var(--ink))}
+.theme-btn .i-sun{display:none}
+[data-theme="dark"] .theme-btn .i-sun{display:block}
+[data-theme="dark"] .theme-btn .i-moon{display:none}
+html{scrollbar-color:rgba(var(--ink),.3) rgb(var(--canvas))}
+html,body{background:rgb(var(--canvas))!important;color:rgb(var(--ink))}
 body{font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-::selection{background:#2433c9;color:#fff}
+::selection{background:rgb(var(--accent));color:rgb(var(--canvas))}
 a{text-underline-offset:.22em}
 
 /* no decorative glows */
 [style*="radial-gradient"][style*="blur("]{display:none!important}
 
 /* display type: condensed Archivo in the accent, like the home page */
-h1{font-stretch:62%!important;text-transform:uppercase;letter-spacing:-.005em!important;line-height:.86!important;color:#2433c9!important}
+h1{font-stretch:62%!important;text-transform:uppercase;letter-spacing:-.005em!important;line-height:.86!important;color:rgb(var(--accent))!important}
 h1 span{color:inherit!important}
 [data-step] h2{font-stretch:75%!important}
 
 /* sticky header reads as part of the canvas */
-[data-m="cs-head"]{background:rgba(237,237,232,.9)!important;backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom-color:rgba(21,21,21,.14)!important}
-[data-m="cs-logo"]{color:#2433c9!important;text-transform:uppercase;font-stretch:75%}
+[data-m="cs-head"]{background:rgba(var(--canvas),.9)!important;backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom-color:rgba(var(--ink),.14)!important}
+[data-m="cs-logo"]{color:rgb(var(--accent))!important;text-transform:uppercase;font-stretch:75%}
 [data-m="cs-logo"] span{display:none}
 
 /* photos and screens sit on paper, not on glow */
@@ -32,3 +40,10 @@ h1 span{color:inherit!important}
 [data-ph-screen] img{display:block!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:top;border:0!important;border-radius:0!important;box-shadow:none!important}
 [data-ph-screen][data-baked] img{transform:scale(1.04)}
 [data-m="hero-shots"][data-mock] img{aspect-ratio:auto!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 22px 24px rgba(21,21,21,.28))}
+.cs-right{display:inline-flex;align-items:center;gap:16px}
+:focus-visible{outline-color:rgb(var(--accent))!important}
+/* diagrams are light drawings: flip them with the theme */
+[data-theme="dark"] img[src$="user-flow.svg"]{filter:invert(1) hue-rotate(180deg)}
+[data-theme="dark"] [data-ph]{box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 24px 44px -24px rgba(0,0,0,.8)}
+[data-m="cs-head"]>span,[data-m="cs-back"]{white-space:nowrap}
+@media (max-width:340px){[data-m="cs-head"]{gap:8px!important}[data-m="cs-head"]>span:not(.cs-right){font-size:11px!important;letter-spacing:.08em!important}.theme-btn{width:36px;height:36px}}
